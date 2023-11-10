@@ -1,0 +1,1 @@
+Tryout project for auto-merging dependencies in monorepos
