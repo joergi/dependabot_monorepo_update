@@ -1,0 +1,26 @@
+name: Test Demo C
+
+on:
+  pull_request:
+    paths:
+      - 'demoC/**'
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-demo-C:
+
+    defaults:
+      run:
+        working-directory: ./demoC
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'liberica'
+        env:
+          DEPLOY_ENV: qa
+      - run: ./gradlew clean test

@@ -1,0 +1,8 @@
+.idea*
+demoA/.gradle
+demoB/.gradle
+demoC/.gradle
+
+demoA/target
+demoB/target
+demoC/target
