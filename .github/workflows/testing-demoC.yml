@@ -3,6 +3,8 @@ name: Test Demo C
 on:
   pull_request:
     paths:
+      - 'demoA/**'
+      - 'demoB/**'
       - 'demoC/**'
     branches: [ main ]
   workflow_dispatch:
