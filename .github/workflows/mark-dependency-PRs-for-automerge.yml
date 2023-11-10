@@ -8,7 +8,9 @@ name: Enables auto-merge on dependency pull requests
       - 'demoB/**'
       - 'demoC/**'
   workflow_dispatch: {}
+
 concurrency: ${{ github.workflow }}
+
 jobs:
   enable-automerge:
     if: |
