@@ -9,7 +9,7 @@ on:
 
 jobs:
   test-demo-C:
-
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./demoC

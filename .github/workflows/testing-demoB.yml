@@ -9,7 +9,7 @@ on:
 
 jobs:
   test-demo-B:
-
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./demoB
