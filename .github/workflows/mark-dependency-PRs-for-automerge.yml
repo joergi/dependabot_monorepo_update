@@ -4,9 +4,9 @@ name: Enables auto-merge on dependency pull requests
     branches:
       - main
     paths:
-      - demoA/build.gradle.kts
-      - demoB/build.gradle.kts
-      - demoC/build.gradle.kts
+      - 'demoA/**'
+      - 'demoB/**'
+      - 'demoC/**'
   workflow_dispatch: {}
 concurrency: ${{ github.workflow }}
 jobs:
