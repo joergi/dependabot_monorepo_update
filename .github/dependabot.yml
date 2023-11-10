@@ -8,6 +8,7 @@ updates:
     open-pull-requests-limit: 100
     labels:
       - "dependencies"
+      - "demoA"
       - "dependabotKotlinVersionUpgrades"
 
   - package-ecosystem: "gradle"
@@ -18,6 +19,7 @@ updates:
     open-pull-requests-limit: 100
     labels:
       - "dependencies"
+      - "demoB"
       - "dependabotKotlinVersionUpgrades"
 
   - package-ecosystem: "gradle"
@@ -29,3 +31,4 @@ updates:
     labels:
       - "dependabotKotlinVersionUpgrades"
       - "dependencies"
+      - "demoC"

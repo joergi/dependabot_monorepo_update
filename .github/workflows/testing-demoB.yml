@@ -9,6 +9,8 @@ on:
 
 jobs:
   test-demo-B:
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'demoB')
     runs-on: ubuntu-latest
     defaults:
       run:
