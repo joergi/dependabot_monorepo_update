@@ -1,0 +1,10 @@
+demoA:
+  - demoA/**/*
+  
+demoB:
+  - demoB/**/*
+
+demoC:
+  - demoC/**/*
+
+
