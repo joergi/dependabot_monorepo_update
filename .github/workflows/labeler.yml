@@ -17,4 +17,7 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: .github/labeler.yml
           sync-labels: true
+      - name: list runs
+        run: gh run list
+
 
