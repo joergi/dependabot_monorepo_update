@@ -7,6 +7,12 @@ on:
       - 'demoB/**'
       - 'demoC/**'
     branches: [ main ]
+
+  workflow_run:
+    workflows: [ "Pull Request Labeler" ]
+    types:
+      - completed
+
   workflow_dispatch: {}
 
 jobs:

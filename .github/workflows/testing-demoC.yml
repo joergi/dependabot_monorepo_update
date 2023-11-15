@@ -7,16 +7,16 @@ on:
       - 'demoB/**'
       - 'demoC/**'
     branches: [ main ]
+
+  workflow_run:
+    workflows: [ "Pull Request Labeler" ]
+    types:
+      - completed
+
   workflow_dispatch: {}
 
 
 jobs:
-  reads-labels:
-    permissions: write-all
-    runs-on: ubuntu-latest
-    steps:
-      - name: read all labels
-        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
   test-demo-C:
     permissions: write-all
     #    permissions:
