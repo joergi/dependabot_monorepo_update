@@ -21,14 +21,14 @@ jobs:
       - name: restart workflow Test Demo A
         run: gh workflow run "Test Demo A"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.PAT }}
       - name: restart workflow Test Demo B
         run: gh workflow run "Test Demo B"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.PAT }}
       - name: restart workflow Test Demo C
         run: gh workflow run "Test Demo C"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.PAT }}
 
 
