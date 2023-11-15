@@ -7,8 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest
 class DemoApplicationTests {
 
 	@Test
-	fun contextLoads() {
-       // some test
+	fun contextLoads() {       
 	}
 
 }
