@@ -18,7 +18,7 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: .github/labeler.yml
           sync-labels: true
-      - name: list runs
+      - name: restart all workflows
         run: |
           gh workflow run "Test Demo A"
           gh workflow run "Test Demo B"
