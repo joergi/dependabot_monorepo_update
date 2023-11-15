@@ -8,8 +8,7 @@ class DemoApplicationTests {
 
 	@Test
 	fun contextLoads() {
-
-// some test
+       // some test
 	}
 
 }
