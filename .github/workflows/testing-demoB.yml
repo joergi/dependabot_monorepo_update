@@ -11,10 +11,11 @@ on:
 
 jobs:
   test-demo-B:
-    permissions:
-      contents: read
-      pull-requests: write
-      actions: write
+    permissions: write-all
+    #    permissions:
+#      contents: read
+#      pull-requests: write
+#      actions: write
     if: |
       contains(github.event.pull_request.labels.*.name, 'demoB')
     runs-on: ubuntu-latest
