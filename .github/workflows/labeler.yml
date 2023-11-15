@@ -5,11 +5,19 @@ on:
   workflow_dispatch: {}
   
 jobs:
+  reads-labels-before:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: read all labels
+        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
   labeler:
-    permissions:
-      contents: read
-      pull-requests: write
-      actions: write
+    permissions: write-all
+    #    permissions:
+    #      contents: read
+    #      pull-requests: write
+    #      actions: write
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,16 +27,21 @@ jobs:
           configuration-path: .github/labeler.yml
           sync-labels: true
       - name: restart workflow Test Demo A
-        run: gh workflow run "Test Demo A" --ref ${{ github.head_ref }}
+        run: gh workflow run testing-demoA.yml --ref ${{ github.head_ref }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
       - name: restart workflow Test Demo B
-        run: gh workflow run "Test Demo B" --ref ${{ github.head_ref }}
+        run: gh workflow run testing-demoB.yml --ref ${{ github.head_ref }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
       - name: restart workflow Test Demo C
-        run: gh workflow run "Test Demo C" --ref ${{ github.head_ref }}
+        run: gh workflow run testing-demoC.yml --ref ${{ github.head_ref }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
-
+  reads-labels-after:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: read all labels
+        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
 

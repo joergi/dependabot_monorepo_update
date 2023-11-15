@@ -10,11 +10,18 @@ on:
   workflow_dispatch: {}
 
 jobs:
+  reads-labels:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: read all labels
+        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
   test-demo-B:
-    permissions:
-      contents: read
-      pull-requests: write
-      actions: write
+    permissions: write-all
+    #    permissions:
+#      contents: read
+#      pull-requests: write
+#      actions: write
     if: |
       contains(github.event.pull_request.labels.*.name, 'demoB')
     runs-on: ubuntu-latest
