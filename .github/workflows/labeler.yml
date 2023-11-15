@@ -19,15 +19,15 @@ jobs:
           configuration-path: .github/labeler.yml
           sync-labels: true
       - name: restart workflow Test Demo A
-        run: gh workflow run "Test Demo A"
+        run: gh workflow run "Test Demo A" --ref ${{ github.head_ref }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
       - name: restart workflow Test Demo B
-        run: gh workflow run "Test Demo B"
+        run: gh workflow run "Test Demo B" --ref ${{ github.head_ref }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
       - name: restart workflow Test Demo C
-        run: gh workflow run "Test Demo C"
+        run: gh workflow run "Test Demo C" --ref ${{ github.head_ref }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
 
