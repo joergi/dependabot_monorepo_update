@@ -19,5 +19,7 @@ jobs:
           sync-labels: true
       - name: list runs
         run: gh run list
+        env:
+          GH_TOKEN: ${{ github.token }}
 
 
