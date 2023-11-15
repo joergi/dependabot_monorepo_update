@@ -7,7 +7,7 @@ on:
       - 'demoB/**'
       - 'demoC/**'
     branches: [ main ]
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   test-demo-C:
