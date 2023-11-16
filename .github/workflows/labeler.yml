@@ -38,4 +38,5 @@ jobs:
         id: PR
         with:
           sha: ${{ github.event.pull_request.head.sha }}
-
+      - name: read all labels after sha
+        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
