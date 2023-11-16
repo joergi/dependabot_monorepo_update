@@ -20,7 +20,10 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: .github/labeler.yml
           sync-labels: true
-
+      - name: config git
+        run: |
+          git config --local user.email "1439809+joergi@users.noreply.github.com"
+          git config --local user.name "Joergi via GitHub Actions"
       - name: empty commit
         if: success() || failure()
         run: |
