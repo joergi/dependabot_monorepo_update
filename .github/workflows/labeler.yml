@@ -20,18 +20,6 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: .github/labeler.yml
           sync-labels: true
-      - name: restart workflow Test Demo A
-        run: gh workflow run testing-demoA.yml --ref ${{ github.head_ref }}
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}
-      - name: restart workflow Test Demo B
-        run: gh workflow run testing-demoB.yml --ref ${{ github.head_ref }}
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}
-      - name: restart workflow Test Demo C
-        run: gh workflow run testing-demoC.yml --ref ${{ github.head_ref }}
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}
 
       - name: empty commit
         if: success() || failure()
