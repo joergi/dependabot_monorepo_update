@@ -27,6 +27,7 @@ jobs:
       - name: empty commit
         if: success() || failure()
         run: |
+          git co ${{ github.head_ref }}
           git pull
           git commit --allow-empty -m "trigger GitHub actions"
           git push origin HEAD:${{ github.head_ref }}
