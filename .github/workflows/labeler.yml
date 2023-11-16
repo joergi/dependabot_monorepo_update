@@ -27,7 +27,7 @@ jobs:
       - name: empty commit
         if: success() || failure()
         run: |
-          git fetch ${{ github.head_ref }}
+          git fetch
           git checkout ${{ github.head_ref }}
           git pull
           git commit --allow-empty -m "trigger GitHub actions"
