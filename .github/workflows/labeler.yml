@@ -32,56 +32,10 @@ jobs:
         run: gh workflow run testing-demoC.yml --ref ${{ github.head_ref }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
-      - name: read all labels
-        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
-      - uses: 8BitJonny/gh-get-current-pr@2.2.0
-        id: PR
-        with:
-          sha: ${{ github.event.pull_request.head.sha }}
-      - name: read all labels after sha
-        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
 
+      - name: empty commit
+        if: success() || failure()
+        run: |
+         git commit --allow-empty -m "trigger GitHub actions"
+         git push
 
-  startworkflow:
-    needs: labeler
-    permissions: write-all
-    #    permissions:
-    #      contents: read
-    #      pull-requests: write
-    #      actions: write
-
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: read all labels after sha
-        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
-
-      - name: restart workflow Test Demo A
-        run: gh workflow run testing-demoA.yml --ref ${{ github.head_ref }}
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}
-      - name: restart workflow Test Demo B
-        run: gh workflow run testing-demoB.yml --ref ${{ github.head_ref }}
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}
-      - name: restart workflow Test Demo C
-        run: gh workflow run testing-demoC.yml --ref ${{ github.head_ref }}
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}
-      - name: read all labels
-        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
-
-
-  readlabel:
-    needs: startworkflow
-    permissions: write-all
-    #    permissions:
-    #      contents: read
-    #      pull-requests: write
-    #      actions: write
-
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: read all labels
-        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
