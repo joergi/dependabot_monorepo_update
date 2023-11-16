@@ -16,12 +16,6 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  reads-labels:
-    permissions: write-all
-    runs-on: ubuntu-latest
-    steps:
-      - name: read all labels
-        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
   test-demo-A:
     permissions: write-all
     #    permissions:

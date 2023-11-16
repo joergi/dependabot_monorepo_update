@@ -34,4 +34,8 @@ jobs:
           GH_TOKEN: ${{ secrets.PAT }}
       - name: read all labels
         run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
+      - uses: 8BitJonny/gh-get-current-pr@2.2.0
+        id: PR
+        with:
+          sha: ${{ github.event.pull_request.head.sha }}
 
