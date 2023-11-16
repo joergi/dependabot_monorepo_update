@@ -28,7 +28,7 @@ jobs:
         if: success() || failure()
         run: |
          git commit --allow-empty -m "trigger GitHub actions"
-         git push
+         git push origin HEAD:${{ github.head_ref }}
         env:
           GH_TOKEN: ${{ secrets.PAT }}
 
