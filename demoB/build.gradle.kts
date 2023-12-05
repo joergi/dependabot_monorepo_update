@@ -29,7 +29,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.20-RC")
 	compileOnly("org.projectlombok:lombok:1.18.30")
 	annotationProcessor("org.projectlombok:lombok:1.18.30")
-	testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.0")
+	testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.0")
 }
 
 tasks.withType<KotlinCompile> {
