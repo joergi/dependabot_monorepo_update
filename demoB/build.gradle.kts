@@ -26,7 +26,7 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter:3.2.0")
-	implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.20-RC")
+	implementation("org.jetbrains.kotlin:kotlin-reflect:2.0.0-Beta1")
 	compileOnly("org.projectlombok:lombok:1.18.30")
 	annotationProcessor("org.projectlombok:lombok:1.18.30")
 	testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.0")
