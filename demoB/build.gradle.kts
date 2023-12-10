@@ -29,8 +29,6 @@ dependencies {
 	testImplementation(libs.springBootStarterTest)
 }
 
-
-
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs += "-Xjsr305=strict"
@@ -41,4 +39,3 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
-
