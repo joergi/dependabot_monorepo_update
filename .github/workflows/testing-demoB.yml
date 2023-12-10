@@ -6,6 +6,7 @@ on:
       - 'demoA/**'
       - 'demoB/**'
       - 'demoC/**'
+      - 'gradle/**'
     branches: [ main ]
 
   workflow_dispatch: {}
