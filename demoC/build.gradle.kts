@@ -20,7 +20,6 @@ configurations {
 	}
 }
 
-
 dependencies {
 	implementation(libs.springBootStarter)
 	implementation(libs.kotlinReflect)
@@ -28,8 +27,6 @@ dependencies {
 	annotationProcessor(libs.lombok)
 	testImplementation(libs.springBootStarterTest)
 }
-
-
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
