@@ -1,0 +1,21 @@
+[versions]
+kotlinJvmTarget = "17"
+kotlinVersion = "1.9.21"
+springBootVersion = "3.2.0"
+springDependencyManagementVersion = "1.1.4"
+lombokVersion = "1.18.30"
+
+[libraries]
+springBootStarter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "springBootVersion" }
+kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinVersion"}
+springBootStarterTest = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBootVersion" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombokVersion" }
+
+[bundles]
+springBootBundle = ["springBootStarter", "springBootStarterTest"]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+kotlin-spring = {id ="org.jetbrains.kotlin.plugin.spring", version.ref = "kotlinVersion"}
+springBoot = { id = "org.springframework.boot", version.ref = "springBootVersion" }
+springDependencyManagement = { id = "io.spring.dependency-management", version.ref = "springDependencyManagementVersion" }
