@@ -1,9 +1,9 @@
 [versions]
 kotlinJvmTarget = "17"
-kotlinVersion = "1.9.21"
-springBootVersion = "3.2.0"
-springDependencyManagementVersion = "1.1.4"
-lombokVersion = "1.18.30"
+kotlinVersion = "1.9.0"
+springBootVersion = "3.1.2"
+springDependencyManagementVersion = "1.1.1"
+lombokVersion = "1.18.20"
 
 [libraries]
 springBootStarter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "springBootVersion" }
