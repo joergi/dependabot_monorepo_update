@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "gradle"
-    directory: "/gradle"
+    directory: "/demoA"
     schedule:
       interval: "daily"
       time: "04:00"
@@ -9,6 +9,26 @@ updates:
     labels:
       - "dependencies"
       - "demoA"
-      - "demoB"
-      - "demoC"
       - "dependabotKotlinVersionUpgrades"
+
+  - package-ecosystem: "gradle"
+    directory: "/demoB"
+    schedule:
+      interval: "daily"
+      time: "04:00"
+    open-pull-requests-limit: 100
+    labels:
+      - "dependencies"
+      - "demoB"
+      - "dependabotKotlinVersionUpgrades"
+
+  - package-ecosystem: "gradle"
+    directory: "/demoC"
+    schedule:
+      interval: "daily"
+      time: "04:00"
+    open-pull-requests-limit: 100
+    labels:
+      - "dependabotKotlinVersionUpgrades"
+      - "dependencies"
+      - "demoC"

@@ -19,7 +19,8 @@ jobs:
 #      pull-requests: write
 #      actions: write
     if: |
-      contains(github.event.pull_request.labels.*.name, 'demoB')
+      contains(github.event.pull_request.labels.*.name, 'demoB') ||
+      contains(github.event.pull_request.labels.*.name, 'dependabotKotlinVersionUpgrades')
     runs-on: ubuntu-latest
     defaults:
       run:
